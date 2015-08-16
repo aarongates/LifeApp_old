@@ -1,5 +1,5 @@
 //Make a MongoDB database at MongoLab.com
 //this should be the config/db.js file
     module.exports = {
-        url : 'mongodb://<username>:<password>@ds033133.mongolab.com:33133/lifedb'
+        url : <the url from mongoLab with username & password>
     }
