@@ -13,7 +13,17 @@
         .when('/tutorial', {
             templateUrl: 'views/tutorial.html',
             controller: 'TutorialController'
-        });
+        })
+        
+        /*
+        .when('/register', {
+           templateUrl: 'views/register.html',
+           controller: 'RegisterController'
+        })
+        */
+        
+        .otherwise({ redirectTo: '/' });
+        
 
     $locationProvider.html5Mode(true);
 
