@@ -15,13 +15,13 @@
             controller: 'TutorialController'
         })
         
-        /*
+        //the user registration page
         .when('/register', {
-           templateUrl: 'views/register.html',
-           controller: 'RegisterController'
+           templateUrl: 'views/register.html'//,
+           //controller: 'RegisterController'
         })
-        */
         
+        //any other urls redirect to home page
         .otherwise({ redirectTo: '/' });
         
 
