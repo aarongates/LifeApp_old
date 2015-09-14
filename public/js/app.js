@@ -3,4 +3,6 @@ angular.module('sampleApp', ['ngRoute',
                              'appRoutes',
                              'MainCtrl',
                              'TutorialCtrl',
-                             'TutorialService']);
+                             'RegisterCtrl',
+                             'TutorialService',
+                             'UserService']);
