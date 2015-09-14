@@ -1,13 +1,13 @@
-<!-- public/views/home.html -->
+<!-- public/views/home/welcome.html -->
 
 <div>
     <div class="col-sm-6 text-center jumbotron">
         <h1>Life</h1>
-        <p>{{ tagline }}<a href="mean.io">MEAN</a> Application</p>
+        <p>{{ tagline }}<a href="http://mean.io">MEAN</a> Application</p>
         
     </div>
     <div class="col-sm-6 text-left">
-        <form name="login" ng-submit="vm.login()" role="form">
+        <form name="login" role="form" ng-controller="MainController">
             <!--The login functionality is referencing
             http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx-->
             
@@ -20,7 +20,7 @@
                 <input type='password' name='password' id='password' class='form-control' ng-model="user.password" />
             </div>
             <div class="form-actions">
-                <button type='submit' ng-disabled="login.$invalid" class='btn btn-primary'>Login</button>
+                <button type='submit' ng-click="doThing(user)" ng-disabled="login.$invalid" class='btn btn-primary'>Login</button>
                 <a href="/register" class="btn btn-link">Register</a>
             </div>
         </form>

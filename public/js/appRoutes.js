@@ -5,7 +5,7 @@
 
         // home page
         .when('/', {
-            templateUrl: 'views/home.html',
+            templateUrl: 'views/outside/welcome.html',
             controller: 'MainController'
         })
 
@@ -17,8 +17,16 @@
         
         //the user registration page
         .when('/register', {
-           templateUrl: 'views/register.html'//,
-           //controller: 'RegisterController'
+           templateUrl: 'views/outside/register.html',
+           controller: 'RegisterController'
+        })
+        
+        .when('/error', {
+           templateUrl: 'views/general/error.html'
+        })
+        
+        .when('/home', {
+            templateUrl: 'views/inside/home.html'
         })
         
         //any other urls redirect to home page
