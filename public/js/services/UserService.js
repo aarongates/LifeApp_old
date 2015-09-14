@@ -26,6 +26,8 @@ angular.module('UserService', [])
             return $http.delete('/api/users/' + id);
         },
         
+        //check if the password is valid
+        //retuns 0 is good, 1 if bad, 2 if trying to be hacked, 3 is error
         knowsPassword : function (username, password) {
             User.getAuthenticated(username, password, function(err, user, reason) {
                 if (err) throw err;
@@ -34,7 +36,7 @@ angular.module('UserService', [])
                 if (user) {
                     // handle login success
                     console.log('login success');
-                    return;
+                    return 0;
                 }
         
                 // otherwise we can determine why we failed
@@ -44,12 +46,15 @@ angular.module('UserService', [])
                     case reasons.PASSWORD_INCORRECT:
                         // note: these cases are usually treated the same - don't tell
                         // the user *why* the login failed, only that it did
+                        return 1;
                         break;
                     case reasons.MAX_ATTEMPTS:
                         // send email or otherwise notify user that account is
                         // temporarily locked
+                        return 2;
                         break;
                 }
+                return 3;
             });
         }
     }

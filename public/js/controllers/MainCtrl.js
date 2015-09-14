@@ -7,7 +7,21 @@ angular.module('MainCtrl', [])
     $scope.tagline = 'This is a ';
     
     $scope.doThing = function(user) {
-        console.log(user.username + " " + user.password);
+        var ans = User.knowsPassword(user.username,user.password);
+        switch  (ans) {
+            case 0:
+                $location.path('/home');
+                break;
+            case 1:
+                //$location.path('/welcome');
+            case 2:
+                $location.path('/welcome');
+                break;
+            default:
+                $location.path('./error');
+                break;
+                
+        }
     }
 
 }]);
