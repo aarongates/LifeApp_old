@@ -2,7 +2,5 @@
 angular.module('sampleApp', ['ngRoute',
                              'appRoutes',
                              'MainCtrl',
-                             'TutorialCtrl',
                              'RegisterCtrl',
-                             'TutorialService',
                              'UserService']);

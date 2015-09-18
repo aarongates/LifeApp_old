@@ -1,14 +1,16 @@
 // public/js/controllers/MainCtrl.js
 angular.module('MainCtrl', [])
     .controller('MainController',
-                ['$scope', '$http', '$location', 'User',
-                 function($scope, $http, $location, User) {
+                ['$scope', '$http', '$location', 'UserService',
+                 function($scope, $http, $location, UserService) {
 
     $scope.tagline = 'This is a ';
     
     $scope.doThing = function(user) {
-        var ans = User.knowsPassword(user.username,user.password);
-        switch  (ans) {
+        UserService.knowsPassword(user.username,user.password)
+        .then(function(response) {
+            console.log("code: " + response.code);
+            switch  (response.code) {
             case 0:
                 $location.path('/home');
                 break;
@@ -19,9 +21,13 @@ angular.module('MainCtrl', [])
                 break;
             default:
                 $location.path('./error');
-                break;
-                
-        }
-    }
+                break;  
+            }    
+        }, function(error) {
+            console.log(error);
+            $location.path('/error');
+        });
+        
+    };
 
 }]);

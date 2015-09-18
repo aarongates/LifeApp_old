@@ -10,9 +10,8 @@
         })
 
         // nerds page that will use the NerdController
-        .when('/tutorial', {
-            templateUrl: 'views/tutorial.html',
-            controller: 'TutorialController'
+        .when('/about', {
+            templateUrl: 'views/outside/about.html'
         })
         
         //the user registration page
