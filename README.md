@@ -11,9 +11,7 @@ Good tutorial reference: http://scotch.io
     2. In the Git Shell command line, go to the directory where you want the repository to be<br />
     3. Do this:</p>
     git clone ---repo url---
-<p> 4. After entering credentials, change the directory to the repository:</p>
-    cd demo-depot-web
-<p> 5. Open solution from Visual Studio. All Git Tools should automagically appear in VS2015. </p>
+<p> 4. Open solution from Visual Studio. All Git Tools should automagically appear in VS2015. </p>
 <h3> To create a new branch: </h3>
     git checkout -b [name your branch]
 <h3> To change branches: </h3>
